@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShipmentOptionTest {
 
-    private Packaging packaging = new Packaging(Material.CORRUGATE, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE);
+    private Box packaging = new Box(Material.CORRUGATE, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE);
     private Item item = Item.builder()
         .withAsin("asin")
         .withDescription("description")
@@ -31,7 +31,7 @@ class ShipmentOptionTest {
         .withHeight(BigDecimal.TEN)
         .build();
     private FulfillmentCenter otherFulfillmentCenter = new FulfillmentCenter("otherFcCode");
-    private Packaging otherPackaging = new Packaging(Material.CORRUGATE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.TEN);
+    private Box otherPackaging = new Box(Material.CORRUGATE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.TEN);
 
     @Test
     public void equals_sameObject_returnsTrue() {

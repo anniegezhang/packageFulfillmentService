@@ -9,18 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+//m3m1 changes all packageing class to box
 public class PackagingTest {
     private Material packagingMaterial = Material.CORRUGATE;
     private BigDecimal packagingLength = BigDecimal.valueOf(5.6);
     private BigDecimal packagingWidth = BigDecimal.valueOf(3.3);
     private BigDecimal packagingHeight = BigDecimal.valueOf(8.1);
 
-    private Packaging packaging;
+    private Box packaging;
 
     @BeforeEach
     public void setUp() {
-        packaging = new Packaging(packagingMaterial, packagingLength, packagingWidth, packagingHeight);
+        packaging = new Box(packagingMaterial, packagingLength, packagingWidth, packagingHeight);
     }
 
     @Test
@@ -106,7 +106,7 @@ public class PackagingTest {
     @Test
     public void getMass_calculatesMass_returnsCorrectMass() {
         // GIVEN
-        packaging = new Packaging(Material.CORRUGATE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(20));
+        packaging = new Box(Material.CORRUGATE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(20));
 
         // WHEN
         BigDecimal mass = packaging.getMass();
@@ -119,7 +119,7 @@ public class PackagingTest {
     @Test
     public void equals_sameObject_isTrue() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean result = packaging.equals(packaging);
@@ -131,7 +131,7 @@ public class PackagingTest {
     @Test
     public void equals_nullObject_returnsFalse() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Box packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean isEqual = packaging.equals(null);
@@ -143,7 +143,7 @@ public class PackagingTest {
     @Test
     public void equals_differentClass_returnsFalse() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Box packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
         Object other = "String type!";
 
         // WHEN
@@ -156,8 +156,8 @@ public class PackagingTest {
     @Test
     public void equals_sameAttributes_returnsTrue() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
-        Object other = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Box packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Object other = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean isEqual = packaging.equals(other);
@@ -169,8 +169,8 @@ public class PackagingTest {
     @Test
     public void hashCode_equalObjects_equalHash() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
-        Packaging other = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Box packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Box other = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN + THEN
         assertEquals(packaging.hashCode(), other.hashCode(), "Equal objects should have equal hashCodes");
