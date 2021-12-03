@@ -1,6 +1,7 @@
 package com.amazon.ata.types;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 
 // created the entire class for m3m1 on 2021/12/02
@@ -13,7 +14,7 @@ public class PolyBag extends Packaging{
      *
      * @param volume - fixed volume of the package
      */
-    public PolyBag(BigDecimal volume) {
+    public PolyBag(Material material, BigDecimal volume) {
         super(Material.LAMINATED_PLASTIC);
         this.Volume = volume;
     }
@@ -35,6 +36,15 @@ public class PolyBag extends Packaging{
 
     @Override
     public boolean equals(Object o) {
-        return super.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PolyBag polyBag = (PolyBag) o;
+        return getVolume().equals(polyBag.getVolume());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getVolume());
     }
 }

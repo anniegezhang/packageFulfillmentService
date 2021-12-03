@@ -1,6 +1,8 @@
 package com.amazon.ata.types;
 
 import java.math.BigDecimal;
+import java.util.Objects;
+
 // created the entire class for m3m1 on 2021/12/02
 public class Box extends Packaging{
 
@@ -67,8 +69,12 @@ public class Box extends Packaging{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Box that = (Box) o;
-        return (this.getLength() != that.getLength() && this.getWidth() != that.getWidth() && this.getHeight() != that.getHeight());
-        }
+        Box box = (Box) o;
+        return getLength().equals(box.getLength()) && getWidth().equals(box.getWidth()) && getHeight().equals(box.getHeight());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getLength(), getWidth(), getHeight());
+    }
 }
