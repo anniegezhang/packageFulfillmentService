@@ -9,6 +9,7 @@ import com.amazon.ata.types.ShipmentOption;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -68,6 +69,7 @@ class PackagingDAOTest {
     public void findShipmentOptions_twoPackagingAvailableAndOneFits_singlePackaging() throws Exception {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
+        System.out.println(packagingDAO);
 
         // WHEN
         List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(testItem, abe2);
@@ -90,6 +92,21 @@ class PackagingDAOTest {
         assertEquals(2, shipmentOptions.size(),
             "When fulfillment center has multiple packaging that can fit item, return a ShipmentOption "
                 + "for each.");
+    }
+
+
+    @Test
+    public void findShipmentOptions_onePackagingAvailableAndFits_bothPackaging() throws Exception {
+        // GIVEN
+        packagingDAO = new PackagingDAO(datastore);
+
+        // WHEN
+        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, iad2);
+
+        // THEN
+        assertEquals(3, shipmentOptions.size(),
+                "When fulfillment center has packaging that can fit item, return a ShipmentOption with the item, "
+                        + "fulfillment center, and packaging that can fit the item.");
     }
 
     private Item createItem(String length, String width, String height) {

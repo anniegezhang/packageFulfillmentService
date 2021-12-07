@@ -2,7 +2,7 @@ package com.amazon.ata.types;
 
 import java.util.Objects;
 
-//changes all the objects of packing class to objects of box class
+//m3: changes all the objects of packing class to box class
 /**
  * Represents a pairing between a packaging option and a fulfillment center that supports that packaging option.
  */
@@ -16,7 +16,7 @@ public class FcPackagingOption {
     /**
      * A packaging that is available at the fulfillment center.
      */
-    private Box packaging;
+    private Packaging packaging;
 
 
     /**
@@ -24,7 +24,7 @@ public class FcPackagingOption {
      * @param fulfillmentCenter - the FC where the packaging Option is available
      * @param packaging - the packaging option available at the provided FC
      */
-    public FcPackagingOption(FulfillmentCenter fulfillmentCenter, Box packaging) {
+    public FcPackagingOption(FulfillmentCenter fulfillmentCenter, Packaging packaging) {
         this.fulfillmentCenter = fulfillmentCenter;
         this.packaging = packaging;
     }

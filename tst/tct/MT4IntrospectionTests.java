@@ -81,6 +81,7 @@ public class MT4IntrospectionTests {
                 genericParamTypes[0].toString())
         );
 
+
         // The Map value type is Java Set - resorting to name comparison (parameterized interface makes it complicated)
         assertTrue(
             genericParamTypes[1].getTypeName().contains(Set.class.getTypeName()),
@@ -89,5 +90,6 @@ public class MT4IntrospectionTests {
                 mapField.getName(),
                 genericParamTypes[1].getTypeName())
         );
+
     }
 }
