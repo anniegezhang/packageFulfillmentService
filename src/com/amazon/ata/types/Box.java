@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 // created the entire class for m3m1 on 2021/12/02
-public class Box extends Packaging{
+public class Box extends Packaging {
 
     private BigDecimal length;
 
@@ -66,11 +66,18 @@ public class Box extends Packaging{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         Box box = (Box) o;
-        return getLength().equals(box.getLength()) && getWidth().equals(box.getWidth()) && getHeight().equals(box.getHeight());
+        return getLength().equals(box.getLength()) && getWidth().equals(box.getWidth()) &&
+                getHeight().equals(box.getHeight());
     }
 
     @Override

@@ -9,7 +9,12 @@ import com.amazon.ata.types.Item;
 import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentOption;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -20,13 +25,14 @@ public class PackagingDAO {
      * A list of fulfillment centers with a packaging options they provide.
      */
     //private List<FcPackagingOption> fcPackagingOptions;
-//mt4: change the arraylist to a map
-/*
-Update the PackagingDAO (and any other necessary classes) to detect and ignore duplicate FcPackagingOptions.
-"Duplicate" in this case means that the FC code is identical, and the Packaging has the same size and the same material.
- We can achieve this by instead of using an ArrayList to hold our fcPackagingOption we can use a HashMap who keys
- are the FulfillmentCenters and whose values are a HashSet of FcPackagingOptions.
- */
+    //mt4: change the arraylist to a map
+    /*
+    Update the PackagingDAO (and any other necessary classes) to detect and ignore duplicate FcPackagingOptions.
+    "Duplicate" in this case means that the FC code is identical, and the Packaging has the same size and the same
+     material.
+     We can achieve this by instead of using an ArrayList to hold our fcPackagingOption we can use a HashMap who keys
+     are the FulfillmentCenters and whose values are a HashSet of FcPackagingOptions.
+     */
 
     private Map<FulfillmentCenter, Set> fcPackagingOptions = new HashMap<FulfillmentCenter, Set>();
 

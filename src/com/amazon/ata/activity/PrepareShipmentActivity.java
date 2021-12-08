@@ -24,15 +24,16 @@ public class PrepareShipmentActivity
      */
     private ShipmentService shipmentService;
 
-    /**
+     /**
      * Instantiates a new PrepareShipmentActivity object.
      * @param shipmentService Shipment service used to retrieve shipment options.
      */
+
      public PrepareShipmentActivity(ShipmentService shipmentService) {
          this.shipmentService = shipmentService;
      }
 
-    /**
+     /**
      * This method handles the incoming request by calling the shipment service and returning the
      * appropriate shipment option for the fulfillment center and item provided in the request.
      *
