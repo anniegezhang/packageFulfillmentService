@@ -18,18 +18,29 @@ public class PackagingDatastore {
      */
     private final List<FcPackagingOption> fcPackagingOptions = Arrays.asList(
             createFcBoxOption("IND1", Material.CORRUGATE, "10", "10", "10"),
+            createFcPolyBagOption("IND1", Material.LAMINATED_PLASTIC, "2000"),
+            createFcPolyBagOption("IND1", Material.LAMINATED_PLASTIC, "5000"),
             createFcBoxOption("ABE2", Material.CORRUGATE, "20", "20", "20"),
             createFcBoxOption("ABE2", Material.CORRUGATE, "40", "40", "40"),
+            createFcPolyBagOption("ABE2", Material.LAMINATED_PLASTIC, "2000"),
+            createFcPolyBagOption("ABE2", Material.LAMINATED_PLASTIC, "6000"),
             createFcBoxOption("YOW4", Material.CORRUGATE, "10", "10", "10"),
             createFcBoxOption("YOW4", Material.CORRUGATE, "20", "20", "20"),
             createFcBoxOption("YOW4", Material.CORRUGATE, "60", "60", "60"),
+            createFcPolyBagOption("YOW4", Material.LAMINATED_PLASTIC, "2000"),
+            createFcPolyBagOption("YOW4", Material.LAMINATED_PLASTIC, "5000"),
+            createFcPolyBagOption("YOW4", Material.LAMINATED_PLASTIC, "5000"),
+            createFcPolyBagOption("YOW4", Material.LAMINATED_PLASTIC, "10000"),
             createFcBoxOption("IAD2", Material.CORRUGATE, "20", "20", "20"),
             createFcBoxOption("IAD2", Material.CORRUGATE, "20", "20", "20"),
             createFcPolyBagOption("IAD2", Material.LAMINATED_PLASTIC, "2000"),
+            createFcPolyBagOption("IAD2", Material.LAMINATED_PLASTIC, "5000"),
             createFcPolyBagOption("IAD2", Material.LAMINATED_PLASTIC, "10000"),
             createFcBoxOption("PDX1", Material.CORRUGATE, "40", "40", "40"),
             createFcBoxOption("PDX1", Material.CORRUGATE, "60", "60", "60"),
-            createFcBoxOption("PDX1", Material.CORRUGATE, "60", "60", "60")
+            createFcBoxOption("PDX1", Material.CORRUGATE, "60", "60", "60"),
+            createFcPolyBagOption("PDX1", Material.LAMINATED_PLASTIC, "5000"),
+            createFcPolyBagOption("PDX1", Material.LAMINATED_PLASTIC, "10000")
     );
     // M4M3: added the polybag option to IAD2
 
