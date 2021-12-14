@@ -72,5 +72,4 @@ public class FulfillmentCenterTest {
         // THEN
         assertNotEquals(fcHashCode, otherHashCode, "Objects that are not equal have different hash codes.");
     }
-
 }
