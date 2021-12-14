@@ -8,7 +8,6 @@ import com.amazon.ata.test.reflect.NoClassFoundException;
  */
 public class ProjectClassFactory {
     private static final String PACKAGE = "com.amazon.ata.";
-
     private ProjectClassFactory() {}
 
     /**
