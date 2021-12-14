@@ -8,6 +8,8 @@
  */
 
 rootProject.name = 'SustainabilityShipmentService'
+
 include 'LibrariesAndUtilities:LessonPlanResources'
 include 'LibrariesAndUtilities:ATACurriculumTestInfrastructure'
+include 'LibrariesAndUtilities:ATACurriculumSustainabilityShipmentServiceIntrospectionTests'
 include 'LibrariesAndUtilities:ATACurriculumSustainabilityShipmentServiceIntrospectionTests'
