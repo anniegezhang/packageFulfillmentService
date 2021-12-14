@@ -38,6 +38,9 @@ public class PrepareShipmentRequest {
     */
     private String fcCode;
 
+    /**
+    * a default constructor of the class.
+    */
     public PrepareShipmentRequest() {
         this.asin   = "0000000000";
         this.description = "Frank Test Default Item - should not ever be needed - only used for testing";
@@ -47,7 +50,15 @@ public class PrepareShipmentRequest {
         this.fcCode = "IND1";
     }
 
-
+    /**
+     * a constructor of the class.
+     * @param asin stands for the asin-code of the item.
+     * @param description is the description of the item.
+     * @param fcCode can tell us which fulfillment center it is.
+     * @param length stands for the length of the item.
+     * @param height stands for the height of the item.
+     * @param width stands for the width of the item.
+     */
     public PrepareShipmentRequest(String asin, String description, BigDecimal length, BigDecimal width,
                                   BigDecimal height, String fcCode) {
         this.asin = asin;
@@ -58,6 +69,11 @@ public class PrepareShipmentRequest {
         this.fcCode = fcCode;
     }
 
+    /**
+     * using builder to construct the class.
+     * @param builder will build the object for us.
+     *
+     */
     public PrepareShipmentRequest(Builder builder) {
         this.asin = builder.asin;
         this.description = builder.description;
@@ -229,11 +245,11 @@ public class PrepareShipmentRequest {
         /**
         * Sets the {@code height} and returns a reference to this Builder so that the methods can be chained together.
         *
-        * @param fcCode the {@code fcCode} to set
+        * @param fcCode1 the {@code fcCode} to set
         * @return a reference to this Builder
         */
-        public Builder withFcCode(String fcCode) {
-            this.fcCode = fcCode;
+        public Builder withFcCode(String fcCode1) {
+            this.fcCode = fcCode1;
             return this;
         }
 
@@ -243,7 +259,7 @@ public class PrepareShipmentRequest {
         * @return a {@code Item} built with parameters of this {@code Item.Builder}
         */
         public PrepareShipmentRequest build() {
-        return new PrepareShipmentRequest(this);
+            return new PrepareShipmentRequest(this);
         }
     }
 
